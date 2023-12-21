@@ -7,6 +7,15 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+@NamedNativeQuery(name = "findAuthors",
+        query = "SELECT * FROM author",
+        resultClass = Author.class)
+@NamedNativeQuery(name = "findAuthorsByName",
+        query = "SELECT * FROM author WHERE name LIKE CONCAT(:name, '%')",
+        resultClass = Author.class)
+@NamedNativeQuery(name = "findAuthorsByContact",
+        query = "SELECT * FROM author WHERE contact = ?1",
+        resultClass = Author.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

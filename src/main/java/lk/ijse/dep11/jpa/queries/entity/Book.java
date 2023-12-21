@@ -21,6 +21,6 @@ public class Book implements Serializable {
     @Column(nullable = false, length = 100)
     private String genre;
     @ManyToOne
-    @JoinColumn(name = "author", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false)
     private Author author;
 }
